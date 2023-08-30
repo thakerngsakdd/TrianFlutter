@@ -8,13 +8,14 @@ class WidgetForm extends StatelessWidget {
     this.suffixWidget,
     this.obsecu,
     this.textEditingController,
+    this.labelWidget,
   }) : super(key: key);
 
   final String? hint;
   final Widget? suffixWidget;
   final bool? obsecu;
   final TextEditingController? textEditingController;
-
+  final Widget? labelWidget;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,6 +26,7 @@ class WidgetForm extends StatelessWidget {
         controller: textEditingController,
         obscureText: obsecu ?? false,
         decoration: InputDecoration(
+            label: labelWidget,
             suffixIcon: suffixWidget,
             hintText: hint,
             filled: true,
